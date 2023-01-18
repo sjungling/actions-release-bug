@@ -1,0 +1,10 @@
+name: run on all release
+on:
+  release:
+jobs:
+  ran-on-all:
+    runs-on: ubuntu-latest
+    steps:
+      - name: triggered from any new release
+        run: |
+          echo "${{ github.ref }} - ${{ github.event_name }} - ${{ toJSON(github.event) }}"

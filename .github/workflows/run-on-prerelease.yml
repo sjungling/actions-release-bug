@@ -1,0 +1,11 @@
+name: run on prereleased
+on:
+  release:
+    types: [prereleased]
+jobs:
+  ran-on-prereleased:
+    runs-on: ubuntu-latest
+    steps:
+      - name: triggered from new prerelease
+        run: |
+          echo "${{ github.ref }} - ${{ github.event_name }} - ${{ toJSON(github.event) }}"
